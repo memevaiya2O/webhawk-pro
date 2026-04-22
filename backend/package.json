@@ -1,0 +1,17 @@
+{
+  "name": "webhawk-pro-backend",
+  "version": "2.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.15.1",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "uuid": "^9.0.1"
+  }
+}

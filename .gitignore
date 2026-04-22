@@ -1,0 +1,61 @@
+# ─── Dependencies ──────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+.pnp.*
+
+# ─── Build output ──────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+.next/
+.turbo/
+.vite/
+.cache/
+
+# ─── Logs ──────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Environment & secrets ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+*.pem
+*.key
+
+# ─── Editor / IDE ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# ─── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Replit ────────────────────────────────────────────────────
+.replit
+.upm/
+.config/
+.local/
+.cache/
+attached_assets/
+.git/
+
+# ─── Tests / coverage ──────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Temp ──────────────────────────────────────────────────────
+tmp/
+temp/
+*.tmp

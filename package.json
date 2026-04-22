@@ -1,0 +1,28 @@
+{
+  "name": "webhawk-pro",
+  "version": "2.0.0",
+  "private": true,
+  "description": "WebHawk Pro — Premium mobile-first web reconnaissance toolkit",
+  "author": "ZeroX <https://t.me/zerox6t9>",
+  "license": "SEE LICENSE FILE",
+  "scripts": {
+    "install": "npm install --prefix . && npm install --prefix ./backend",
+    "build": "npm run build --prefix .",
+    "build:frontend": "vite build",
+    "build:all": "vite build && npm install --prefix ./backend",
+    "start": "node backend/server.js",
+    "dev": "vite --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.84.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
+  }
+}

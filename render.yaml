@@ -1,0 +1,29 @@
+# ════════════════════════════════════════════════════════════════════
+  #  WebHawk Pro — Render Blueprint (npm standalone)
+  #  © 2026 ZeroX (https://t.me/zerox6t9) — All Rights Reserved
+  # ════════════════════════════════════════════════════════════════════
+
+  services:
+    - type: web
+      name: webhawk-pro
+      runtime: node
+      plan: free
+      region: singapore
+      branch: main
+      autoDeploy: true
+
+      buildCommand: |
+        npm install &&
+        npm run build:frontend &&
+        cd backend && npm install
+
+      startCommand: node backend/server.js
+
+      healthCheckPath: /health
+
+      envVars:
+        - key: NODE_ENV
+          value: production
+        - key: NODE_VERSION
+          value: "20"
+  
