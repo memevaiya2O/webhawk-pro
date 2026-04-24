@@ -1,29 +1,26 @@
 # ════════════════════════════════════════════════════════════════════
-  #  WebHawk Pro — Render Blueprint (npm standalone)
-  #  © 2026 ZeroX (https://t.me/zerox6t9) — All Rights Reserved
-  # ════════════════════════════════════════════════════════════════════
+# WebHawk Pro — Render Blueprint
+# © 2026 ZeroX (https://t.me/zerox6t9) — All Rights Reserved
+# ════════════════════════════════════════════════════════════════════
 
-  services:
-    - type: web
-      name: webhawk-pro
-      runtime: node
-      plan: free
-      region: singapore
-      branch: main
-      autoDeploy: true
+services:
+  - type: web
+    name: webhawk-pro
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    autoDeploy: true
 
-      buildCommand: |
-        npm install &&
-        npm run build:frontend &&
-        cd backend && npm install
+    # --include=dev ensures vite (devDep) is installed even with NODE_ENV=production
+    # postinstall in package.json handles backend deps automatically
+    buildCommand: npm install --include=dev --no-audit --no-fund && npm run build
+    startCommand: node backend/server.js
 
-      startCommand: node backend/server.js
+    healthCheckPath: /health
 
-      healthCheckPath: /health
-
-      envVars:
-        - key: NODE_ENV
-          value: production
-        - key: NODE_VERSION
-          value: "20"
-  
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
