@@ -6,12 +6,11 @@
   "author": "ZeroX <https://t.me/zerox6t9>",
   "license": "SEE LICENSE FILE",
   "scripts": {
-    "install": "npm install --prefix . && npm install --prefix ./backend",
-    "build": "npm run build --prefix .",
+    "build": "vite build",
     "build:frontend": "vite build",
-    "build:all": "vite build && npm install --prefix ./backend",
     "start": "node backend/server.js",
-    "dev": "vite --host 0.0.0.0"
+    "dev": "vite --host 0.0.0.0",
+    "postinstall": "npm --prefix ./backend install --omit=dev --no-audit --no-fund"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.84.2",
